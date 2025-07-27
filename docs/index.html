@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="scripts/index.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>Genshin Artifact Simulator</title>
 </head>
 <body>
-    <h1>is this thing on</h1>
+    <h1>Artifact Simulator</h1>
+    <div>
+        <label for="set-selector"></label>
+        <select name="sets" id="set-selector">
+            <option value="" disabled selected>Select a set...</option>
+        </select>
+        <button type="button" id="generate-btn">Generate Artifact</button>
+    </div>
+    <div id="artifact-output" class="artifact-display">
+        <p id="artifact-name"></p>      <!-- Shaft of Remembrance -->
+        <p id="slot-name"></p>          <!-- Plume of Death -->
+        <p id="mainstat-name"></p>      <!-- ATK -->
+        <p id="mainstat-value"></p>     <!-- 311-->
+        <p id="level"></p>              <!-- +20 -->
+        <div id="substats">
+            <ul role="list">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <p id="set-name"></p>           <!-- Shimenawa's Remembrance-->
+    </div>
+
 </body>
 </html>
