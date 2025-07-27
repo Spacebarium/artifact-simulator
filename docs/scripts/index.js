@@ -27,7 +27,7 @@ class Artifact {
 
 async function loadArtifactSets() {
     try {
-        const res = await fetch("/docs/data/artifact_sets.json");
+        const res = await fetch("../docs/data/artifact_sets.json");
         return await res.json();
     } catch (err) {
         console.error("Artifact load failed", err);
