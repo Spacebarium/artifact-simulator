@@ -378,5 +378,25 @@
             "goblet": "Deep Gallery's Bestowed Banquet",
             "circlet": "Deep Gallery's Lost Crown"
         }
+    },
+    "NightOfTheSkysUnveiling": {
+        "displayName": "Night of the Sky's Unveiling",
+        "slotNames": {
+            "flower": "Bloom of the Mind's Desire",
+            "plume": "Feather of Indelible Sin",
+            "sands": "Revelation's Toll",
+            "goblet": "Vessel of Plenty",
+            "circlet": "Crown of the Befallen"
+        }
+    },
+    "SilkenMoonsSerenade": {
+        "displayName": "Silken Moon's Serenade",
+        "slotNames": {
+            "flower": "Crystal Tear of the Wanderer",
+            "plume": "Pristine Plume of the Blessed",
+            "sands": "Frost Devotee's Delirium",
+            "goblet": "Joyous Glory of the Pure",
+            "circlet": "Holy Crown of the Believer"
+        }
     }
 }
