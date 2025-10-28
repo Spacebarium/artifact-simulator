@@ -4,7 +4,7 @@ export const ARTIFACT_SLOTS = {
     sands: { displayName: "Sands of Eon" },
     goblet: { displayName: "Goblet of Eonothem" },
     circlet: { displayName: "Circlet of Logos" },
-}
+} as const
 
 export const MAINSTAT_WEIGHTS = {
     flower: {
@@ -43,7 +43,7 @@ export const MAINSTAT_WEIGHTS = {
         "HB": 5,
         "EM": 2,
     },
-}
+} as const
 
 export const SUBSTAT_WEIGHTS = {
     "HP": 6,
@@ -56,9 +56,9 @@ export const SUBSTAT_WEIGHTS = {
     "ER": 4,
     "CR": 3,
     "CD": 3,
-}
+} as const
 
-export const SUBSTAT_RV = {
+export const SUBSTAT_RV: Record<SubstatKey, number[]> = {
     "HP": [209.13, 239.00, 268.88, 298.75],
     "ATK": [13.62, 15.56, 17.51, 19.45],
     "DEF": [16.20, 18.52, 20.83, 23.15],
@@ -69,7 +69,7 @@ export const SUBSTAT_RV = {
     "ER": [4.53, 5.18, 5.83, 6.48],
     "CR": [2.72, 3.11, 3.50, 3.89],
     "CD": [5.44, 6.22, 6.99, 7.77],
-}
+} as const
 
 export const SUBSTAT_DISPLAY_MAPPINGS = {
     "HP": { displayName: "HP", hasPercentage: false, decimalPlaces: 0 },
@@ -82,7 +82,7 @@ export const SUBSTAT_DISPLAY_MAPPINGS = {
     "ER": { displayName: "Energy Recharge", hasPercentage: true, decimalPlaces: 1 },
     "CR": { displayName: "CRIT Rate", hasPercentage: true, decimalPlaces: 1 },
     "CD": { displayName: "CRIT DMG", hasPercentage: true, decimalPlaces: 1 },
-}
+} as const
 
 export const MAINSTAT_DISPLAY_MAPPINGS = {
     "HP": { displayName: "HP" },
@@ -104,9 +104,14 @@ export const MAINSTAT_DISPLAY_MAPPINGS = {
     "ANEMO%": { displayName: "Anemo DMG Bonus" },
     "GEO%": { displayName: "Geo DMG Bonus" },
     "PHYSICAL%": { displayName: "Physical DMG Bonus" },
-}
+} as const
 
 export const FOURTH_SUBSTAT_CHANCE = {
     "domain": 1 / 5,
     "other": 1 / 3,
-}
+} as const
+
+export type SlotKey = keyof typeof ARTIFACT_SLOTS;
+export type MainStatKey = keyof typeof MAINSTAT_DISPLAY_MAPPINGS;
+export type SubstatKey = keyof typeof SUBSTAT_DISPLAY_MAPPINGS;
+export type ArtifactSourceKey = keyof typeof FOURTH_SUBSTAT_CHANCE;
