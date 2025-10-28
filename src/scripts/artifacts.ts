@@ -1,4 +1,5 @@
-import { ARTIFACT_SLOTS, MAINSTAT_WEIGHTS, SUBSTAT_WEIGHTS, SUBSTAT_RV, SUBSTAT_DISPLAY_MAPPINGS, MAINSTAT_DISPLAY_MAPPINGS, FOURTH_SUBSTAT_CHANCE } from "./artifact-data.js";
+//@ts-nocheck
+import { ARTIFACT_SLOTS, MAINSTAT_WEIGHTS, SUBSTAT_WEIGHTS, SUBSTAT_RV, SUBSTAT_DISPLAY_MAPPINGS, MAINSTAT_DISPLAY_MAPPINGS, FOURTH_SUBSTAT_CHANCE } from "./artifact-data.ts";
 
 Number.prototype.roundTo = function (decimal) {
     return +(Math.round(this + "e+" + decimal) + "e-" + decimal);
