@@ -2,14 +2,18 @@
   "name": "artifact-simulator",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://spacebarium.github.io/artifact-simulator/",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "typescript": "~5.9.3",
-    "vite": "^7.1.7"
+    "vite": "^7.2.4"
   }
 }
