@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genshin Artifact Simulator</title>
+  <script type="module" crossorigin src="/artifact-simulator/assets/index-C2ksuZBU.js"></script>
+  <link rel="stylesheet" crossorigin href="/artifact-simulator/assets/index-DDbyzVQA.css">
+</head>
+<body>
+    <h1>Artifact Simulator</h1>
+    <div id="artifact-options" class="artifact-options">
+        <label for="set-selector"></label>
+        <select name="sets" id="set-selector">
+            <option value="" disabled selected>Select a set...</option>
+        </select>
+        <button type="button" id="generate-btn">Generate Artifact</button>
+        <label for="double-crit-only"></label>
+        <input type="checkbox" name="double-crit-checkbox" id="double-crit-only"> Double CRIT Only
+    </div>
+
+    <div class="level-controls">
+        <button type="button" id="level-up-1">+1</button>
+        <button type="button" id="level-up-tier">To Next Tier</button>
+        <button type="button" id="level-up-max">Max</button>
+    </div>
+
+    <div id="artifact-output" class="artifact-display">
+        <p id="artifact-name"></p>      <!-- Shaft of Remembrance -->
+        <p id="slot-name"></p>          <!-- Plume of Death -->
+        <p id="main-stat-name"></p>     <!-- ATK -->
+        <p id="main-stat-value"></p>    <!-- 311-->
+        <p id="level"></p>              <!-- +20 -->
+        <div id="substats">
+            <ul class="substat-list" role="list">
+                <li id="substat-1" class="substat-item"></li>
+                <li id="substat-2" class="substat-item"></li>
+                <li id="substat-3" class="substat-item"></li>
+                <li id="substat-4" class="substat-item"></li>
+            </ul>
+        </div>
+        <p id="set-name"></p>           <!-- Shimenawa's Remembrance-->
+        <img src="" alt="" id="artifact-img">
+    </div>
+</body>
+</html>
