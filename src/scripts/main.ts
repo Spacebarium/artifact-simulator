@@ -4,7 +4,7 @@ import "../css/index.css";
 import { Artifact } from "../models/Artifact";
 import { type ArtifactSet, loadArtifactSets } from "../utils/loadArtifactSets";
 import { MAINSTAT_DISPLAY_MAPPINGS, SUBSTAT_DISPLAY_MAPPINGS } from "../data/constants";
-import { roundTo, el } from "../utils/helpers";
+import { roundTo, el, preloadAllImages } from "../utils/helpers";
 
 let artifactSets: Record<string, ArtifactSet> | null = null;
 let currentArtifact: Artifact | null = null;
@@ -15,7 +15,11 @@ const generateButton = el<HTMLButtonElement>("generate-btn");
 init();
 
 async function init() {
-    artifactSets = await loadArtifactSets();
+    const data = await loadArtifactSets();
+    artifactSets = data.sets;
+    
+    await preloadAllImages(data.imagePaths);
+
     initializeSetSelector();
     setLevelButtonsEnabled(false);
     registerLevelUpButtons();
