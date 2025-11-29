@@ -10,6 +10,7 @@ export class Artifact {
     mainStatKey: MainStatKey
     substats: Substat[]
     source: ArtifactSourceKey
+    isFourLinerStart: boolean
 
     constructor(
         setKey: string,
@@ -20,11 +21,16 @@ export class Artifact {
         source: ArtifactSourceKey = "domain",
     ) {
         this.setKey = setKey;                                           // EmblemOfSeveredFate
-        this.slotKey = slotKey ?? this.initializeSlot();                // plume
-        this.level = level;                                             // 0
-        this.mainStatKey = mainStatKey ?? this.initializeMainStat();    // ATK
-        this.substats = substats.length ? substats : this.initializeSubstats(source);
         this.source = source;
+        this.level = level;                                             // 0
+        this.isFourLinerStart = this.determineIfFourLiner(source);
+        this.slotKey = slotKey ?? this.initializeSlot();                // plume
+        this.mainStatKey = mainStatKey ?? this.initializeMainStat();    // ATK
+        this.substats = substats.length ? substats : this.initializeSubstats();
+    }
+
+    private determineIfFourLiner(source: ArtifactSourceKey): boolean {
+        return Math.random() < FOURTH_SUBSTAT_CHANCE[source];
     }
 
     private initializeSlot(): SlotKey {
@@ -47,7 +53,7 @@ export class Artifact {
         return entries[0][0]  // fallback
     }
 
-    private initializeSubstats(source: ArtifactSourceKey): Substat[] {
+    private initializeSubstats(): Substat[] {
         const substats: Substat[] = [];
         const available: Record<SubstatKey, number> = { ...SUBSTAT_WEIGHTS };
         delete available[this.mainStatKey as SubstatKey];
@@ -68,7 +74,7 @@ export class Artifact {
                             tier: tier,
                             value: SUBSTAT_RV[substat][tier],
                         }],
-                        isActive: i < 3 || (Math.random() < FOURTH_SUBSTAT_CHANCE[source]),
+                        isActive: i < 3 || this.isFourLinerStart,
                     });
                     delete available[substat];
                     break;
@@ -77,6 +83,18 @@ export class Artifact {
         }
 
         return substats;
+    }
+
+    rerollSubstats(): void {
+        this.level = 0;
+        this.substats[3].isActive = this.isFourLinerStart ? true : false;
+
+        // reset to starting rolls
+        this.substats.forEach((substat) => {
+            substat.rolls = [substat.rolls[0]];
+        });
+
+        this.levelUp(20);
     }
 
     levelUp(levels = 1): void {

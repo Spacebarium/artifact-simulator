@@ -1,35 +1,47 @@
 /* atkinson-hyperlegible-next-regular - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: "Atkinson Hyperlegible Next";
     font-style: normal;
     font-weight: 400;
-    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-regular.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* atkinson-hyperlegible-next-italic - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: "Atkinson Hyperlegible Next";
     font-style: italic;
     font-weight: 400;
-    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-italic.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* atkinson-hyperlegible-next-700 - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: "Atkinson Hyperlegible Next";
     font-style: normal;
     font-weight: 700;
-    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-700.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* atkinson-hyperlegible-next-700italic - latin */
 @font-face {
-    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
     font-family: "Atkinson Hyperlegible Next";
     font-style: italic;
     font-weight: 700;
-    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-700italic.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    src: url("../fonts/atkinson-hyperlegible-next-v6-latin-700italic.woff2") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
 /* genshin HYWenHei*/
 @font-face {
     font-display: swap;
@@ -45,14 +57,141 @@
     font-family: "Atkinson Hyperlegible Next", sans-serif;
 }
 
-.artifact-display * {
-    font-family: "HYWenHei", sans-serif;
-}
-
 .substat-item {
     white-space: pre;
 }
 
 .level-controls button:disabled {
     cursor: not-allowed;
+}
+
+#reference-overlay {
+    position: absolute;
+    width: 30.75rem;
+    height: auto;
+    margin-top: 1em;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+.reference-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.artifact-card {
+    container-type: inline-size;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 1em;
+    font-family: "HYWenHei", sans-serif;
+    font-kerning: none;
+}
+
+.artifact-card * {
+    font-family: inherit;
+}
+
+.artifact-name {
+    aspect-ratio: 492 / 58;
+    place-content: center;
+    padding: 0 5.89cqw;
+    background: url("/public/data/item_header_bg.png") center no-repeat;
+    background-size: 100% 100%;
+    background-color: #bc6932;
+    color: white;
+    /* font-size: 6.91cqw; */
+    /* font-size: 4.85cqw; */
+    font-size: clamp(4.85cqw, 6.91cqw, 6.91cqw);
+    text-wrap: nowrap;
+    line-height: 1.2;
+}
+
+.stat-image-section {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    aspect-ratio: 492 / 225;
+    background: gray;
+    padding-left: 5.89cqw;
+    align-items: start;
+}
+
+.main-stat-column {
+    padding-top: 1.83cqw;
+    color: white;
+}
+
+.slot-name {
+    font-size: 4.37cqw;
+}
+
+.main-stat-name {
+    padding-top: 10.36cqw;
+    color: lightgray;
+    font-size: 4.37cqw;
+}
+
+.main-stat-value {
+    line-height: 1;
+    font-size: 9.04cqw;
+}
+
+.rarity-stars {
+    line-height: 1.2;
+    margin-left: -0.81cqw;
+    color: gold;
+    font-size: 8.23cqw;
+}
+
+.artifact-img {
+    width: 45.73cqw;
+    height: auto;
+    justify-self: center;
+}
+
+.section-break {
+    width: 100%;
+    height: 1cqw;
+    margin-top: -1cqw;
+    background-color: rgb(0, 0, 0, 0.2);
+}
+
+.substats-section {
+    background-color: #ebe4d7;
+    padding: 5.28cqw 5.89cqw;
+    font-size: 5.08cqw;
+}
+
+.level {
+    display: flex;
+    width: fit-content;
+    height: auto;
+    padding: 0.6cqw 2.55cqw 0 2.2cqw;
+    align-items: center;
+    justify-content: center;
+    background-color: #39434f;
+    border-radius: 0.8cqw;
+    color: white;
+    line-height: 1;
+}
+
+.substat-list {
+    display: flex;
+    flex-direction: column;
+    margin: 5.05cqw 0 2.3cqw 0;
+    padding: 0;
+    gap: 2cqw;
+    color: #495366;
+}
+
+.substat-item {
+    line-height: 1.15;
+    text-wrap: wrap;
+}
+
+.set-name {
+    color: #5cb256;
+    line-height: 1;
 }
