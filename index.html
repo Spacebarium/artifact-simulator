@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genshin Artifact Simulator</title>
-  <script type="module" crossorigin src="/artifact-simulator/assets/index-BmwRL49G.js"></script>
-  <link rel="stylesheet" crossorigin href="/artifact-simulator/assets/index-DDbyzVQA.css">
+  <script type="module" crossorigin src="/artifact-simulator/assets/index-B9xSTiNV.js"></script>
+  <link rel="stylesheet" crossorigin href="/artifact-simulator/assets/index-D57TIR8o.css">
 </head>
+
 <body>
     <h1>Artifact Simulator</h1>
     <div id="artifact-options" class="artifact-options">
@@ -15,32 +17,57 @@
             <option value="" disabled selected>Select a set...</option>
         </select>
         <button type="button" id="generate-btn">Generate Artifact</button>
-        <label for="double-crit-only"></label>
-        <input type="checkbox" name="double-crit-checkbox" id="double-crit-only"> Double CRIT Only
+        <div>
+            <input type="checkbox" id="double-crit-checkbox" name="double-crit-checkbox">
+            <label for="double-crit-checkbox">Double CRIT Only</label>
+        </div>
+        <!-- <div>
+            <input type="range" id="opacity-slider" name="opacity-slider" min="0" max="1" value="0.3" step="0.05">
+            <label for="opacity-slider">Opacity</label>
+        </div> -->
     </div>
 
     <div class="level-controls">
         <button type="button" id="level-up-1">+1</button>
         <button type="button" id="level-up-tier">To Next Tier</button>
         <button type="button" id="level-up-max">Max</button>
+        <button type="button" id="reroll">Reroll</button>
     </div>
 
-    <div id="artifact-output" class="artifact-display">
-        <p id="artifact-name"></p>      <!-- Shaft of Remembrance -->
-        <p id="slot-name"></p>          <!-- Plume of Death -->
-        <p id="main-stat-name"></p>     <!-- ATK -->
-        <p id="main-stat-value"></p>    <!-- 311-->
-        <p id="level"></p>              <!-- +20 -->
-        <div id="substats">
-            <ul class="substat-list" role="list">
-                <li id="substat-1" class="substat-item"></li>
-                <li id="substat-2" class="substat-item"></li>
-                <li id="substat-3" class="substat-item"></li>
-                <li id="substat-4" class="substat-item"></li>
-            </ul>
-        </div>
-        <p id="set-name"></p>           <!-- Shimenawa's Remembrance-->
-        <img src="" alt="" id="artifact-img">
+    <div id="stats" class="stats">
+        <p id="reroll-count">Rerolls: 0</p>
     </div>
+
+    <!-- <div id="reference-overlay">
+        <img src="./public/data/3.png" alt="" class="reference-img">
+    </div> -->
+
+
+    <div id="artifact-card" class="artifact-card">
+        <div id="artifact-name" class="artifact-name"><div></div></div>
+        <div class="stat-image-section">
+            <div class="main-stat-column">
+                <div id="slot-name" class="slot-name"></div>
+                <div id="main-stat-name" class="main-stat-name"></div>
+                <div id="main-stat-value" class="main-stat-value">14.9%</div>
+                <div id="rarity-stars" class="rarity-stars">★★★★★</div>
+            </div>
+
+            <img src="" alt="" id="artifact-img" class="artifact-img">
+        </div>
+        <div class="section-break"></div>
+        <div class="substats-section">
+            <div id="level" class="level">+4</div>
+            <div id="substat-list" class="substat-list">
+                <div id="substat-1" class="substat-item"></div>
+                <div id="substat-2" class="substat-item"></div>
+                <div id="substat-3" class="substat-item"></div>
+                <div id="substat-4" class="substat-item"></div>
+            </div>
+            <div id="set-name" class="set-name"></div>
+        </div>
+    </div>
+
 </body>
+
 </html>
